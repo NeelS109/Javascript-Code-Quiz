@@ -29,3 +29,13 @@ var questions = [
 ];
 
 
+// Variables to keep track of quiz
+var currentquestionindex;
+var score
+
+//Variables to reference DOM 
+var timer = document.querySelector("#startTime");
+var currentTime = document.querySelector("#currentTime");
+var questionsDiv = document.querySelector("#questionsDiv");
+var wrapper = document.querySelector("#wrapper");
+
