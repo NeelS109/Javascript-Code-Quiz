@@ -34,8 +34,19 @@ var currentquestionindex;
 var score
 
 //Variables to reference DOM 
-var timer = document.querySelector("#startTime");
-var currentTime = document.querySelector("#currentTime");
+var startTime = document.querySelector("#startTime");
+var timeremaining = document.querySelector("#timeremaining");
 var questionsDiv = document.querySelector("#questionsDiv");
 var wrapper = document.querySelector("#wrapper");
+
+// 15 seconds per question starting at 100:
+var secondsLeft = 101;
+// interval time
+var holdInterval = 0;
+// wrong answer time decremented
+var penalty = 15;
+// Creates new element
+var ulCreate = document.createElement("ul");
+
+
 
