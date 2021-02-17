@@ -85,7 +85,7 @@ function render(currentquestionIndex) {
         newChoices.addEventListener("click", (compare));
     })
 }
-// Function to determine whether answer is correct or not.
+// Function to determine whether user answer is correct or not.
 function compare(event) {
     var element = event.target;
 
@@ -104,3 +104,98 @@ function compare(event) {
         }
 
     }
+
+        // Current Question Index determines question user is on
+        currentquestionIndex++;
+
+        if (currentquestionIndex >= questions.length) {
+            // Completed will append last page with user stats
+            completed();
+            rightWrong.textContent = "Quiz Completed!" + " You got  " + score + "/" + questions.length + " Correct!";
+        } else {
+            render(currentquestionIndex);
+        }
+        questionsDiv.appendChild(rightWrong);
+    
+    }
+    // Completed function will append last page
+    function completed() {
+        questionsDiv.innerHTML = "";
+        currentClock.innerHTML = "";
+    
+        // Quiz Completed Heading
+        var createQC = document.createElement("h1");
+        createQC.setAttribute("id", "createQC");
+        createQC.textContent = "Quiz Completed"
+    
+        questionsDiv.appendChild(createQC);
+    
+        // New Paragraph where time will be displayed
+        var newParagraph = document.createElement("p");
+        newParagraph.setAttribute("id", "createP");
+    
+        questionsDiv.appendChild(newParagraph);
+    
+        // New variable to calculate score and display on screen
+        if (clockLeft >= 0) {
+            var timeRemaining = clockLeft;
+            var newP2 = document.createElement("p");
+            clearInterval(holdInterval);
+            createP.textContent = "You scored " + timeRemaining;
+    
+            questionsDiv.appendChild(newP2);
+        }
+
+
+    // Asking user to enter name
+    var askName = document.createElement("askName");
+    askName.setAttribute("id", "createLabel");
+    askName.textContent = "Enter your Name: ";
+
+    questionsDiv.appendChild(askName);
+
+    // Input space to enter Name at end of quiz
+    var createInput = document.createElement("input");
+    createInput.setAttribute("type", "text");
+    createInput.setAttribute("id", "Name");
+    createInput.textContent = "";
+
+    questionsDiv.appendChild(createInput);
+
+    // submit button for final score
+    var createSubmit = document.createElement("button");
+    createSubmit.setAttribute("type", "submit");
+    createSubmit.setAttribute("id", "submitFinal");
+    createSubmit.textContent = "Submit Final Score";
+
+    questionsDiv.appendChild(createSubmit);
+
+    // Event listener for Name and local storage for name and score
+    createSubmit.addEventListener("click", function () {
+        var Name = createInput.value;
+
+        if (Name === null) {
+
+            console.log("No name entered");
+
+        } else {
+            var finalScore = {
+                Name: Name,
+                score: timeRemaining
+            }
+            console.log(finalScore);
+            var totalScores = localStorage.getItem("allScores");
+            if (totalScores === null) {
+                totalScores = [];
+            } else {
+                totalScores = JSON.parse(totalScores);
+            }
+            totalScores.push(finalScore);
+            var newScore = JSON.stringify(totalScores);
+            localStorage.setItem("allScores", newScore);
+            // Opens highscores page
+            window.location.replace("./HighScores.html");
+        }
+    });
+
+}
