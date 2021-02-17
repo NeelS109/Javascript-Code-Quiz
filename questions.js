@@ -47,3 +47,19 @@ var holdInterval = 0;
 // Creates new element
 var ulCreate = document.createElement("ul");
 
+// Triggers clock on button and shows clock on screen
+clock.addEventListener("click", function () {
+    if (holdInterval === 0) {
+        holdInterval = setInterval(function () {
+            clockLeft--;
+            currentClock.textContent = "Time: " + clockLeft;
+
+            if (clockLeft <= 0) {
+                clearInterval(holdInterval);
+                completed();
+                currentClock.textContent = "Time's up!";
+            }
+        }, 1000);
+    }
+    render(currentquestionIndex);
+});
