@@ -47,7 +47,7 @@ var holdInterval = 0;
 // Creates new element
 var ulCreate = document.createElement("ul");
 
-// Triggers clock on button and shows clock on screen
+// Triggers clock to start and shows clock on screen
 clock.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
@@ -63,3 +63,25 @@ clock.addEventListener("click", function () {
     }
     render(currentquestionIndex);
 });
+
+// function to show questions and choices on page: 
+function render(currentquestionIndex) {
+    // Clears page 
+    questionsDiv.innerHTML = "";
+    ulCreate.innerHTML = "";
+    // For loops to display the questions and choices
+    for (var i = 0; i < questions.length; i++) {
+        // Displays new question only
+        var userQuestion = questions[currentquestionIndex].question;
+        var userChoices = questions[currentquestionIndex].choices;
+        questionsDiv.textContent = userQuestion;
+    }
+    // Displays new choices in list form for each question
+    userChoices.forEach(function (newItem) {
+        var newChoices = document.createElement("li");
+        newChoices.textContent = newItem;
+        questionsDiv.appendChild(ulCreate);
+        ulCreate.appendChild(newChoices);
+        newChoices.addEventListener("click", (compare));
+    })
+}
