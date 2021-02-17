@@ -194,7 +194,7 @@ function compare(event) {
             var newScore = JSON.stringify(totalScores);
             localStorage.setItem("allScores", newScore);
             // Opens highscores page
-            window.location.replace("./HighScores.html");
+            window.location.replace("./leaderboard.html");
         }
     });
 
