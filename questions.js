@@ -85,3 +85,22 @@ function render(currentquestionIndex) {
         newChoices.addEventListener("click", (compare));
     })
 }
+// Function to determine whether answer is correct or not.
+function compare(event) {
+    var element = event.target;
+
+    if (element.matches("li")) {
+
+        var rightWrong = document.createElement("div");
+        rightWrong.setAttribute("id", "createDiv");
+        // Correct answer 
+        if (element.textContent == questions[currentquestionIndex].answer) {
+            score++;
+            rightWrong.textContent = "Correct!";
+        } else {
+            // Will deduct 15 seconds off clockLeft for wrong answers
+            clockLeft = clockLeft - wrongAnswer;
+            rightWrong.textContent = "Incorrect!";
+        }
+
+    }
