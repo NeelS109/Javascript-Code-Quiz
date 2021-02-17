@@ -7,25 +7,21 @@
     <title>Javascript Code Quiz</title>
     <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
-<body>
-    
-</body>
-</html>
 
 <body>
     <!-- Link to highscores and names -->
     <a href="HighScores.html">View Highscores</a>
-    <!-- This is a wrapper -->
-    <div id="wrapper">
+    <!-- Wrapper for quiz info -->
+    <div id="quizInfo">
         <!-- Div for decremented timer -->
-        <div id="currentTime"></div>
-        <!-- Div for quiz questions and answers -->
+        <div id="currentClock"></div>
+        <!-- quiz content div -->
         <div id="questionsDiv">
-            <h1>Javascript Code Quiz</h1>
+            <h1>Javascript Quiz Challenge</h1>
             <p>Answer the following Javascript related questions before time runs out. Any incorrect
                 answer will result in your score being deducted by ten seconds!</p>
             <ul id="choicesUl"></ul>
-            <!-- Start quiz button -->
+            <!-- Buttons -->
             <button id="startTime">Start Quiz</button>
         </div>
 
@@ -33,7 +29,6 @@
 
 
     <script src="questions.js"></script>
-
 
 </body>
 

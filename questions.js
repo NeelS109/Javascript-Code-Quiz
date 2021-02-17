@@ -1,4 +1,4 @@
-// Variables set with array and object for questions and answers
+// Variables set with array for questions and answers
 var questions = [
     {
         question: "Which of the following best describes JavaScript?",
@@ -28,25 +28,22 @@ var questions = [
 
 ];
 
-
 // Variables to keep track of quiz
-var currentquestionindex;
-var score
+var score = 0;
+var currentquestionIndex = 0;
 
-//Variables to reference DOM 
-var startTime = document.querySelector("#startTime");
-var timeremaining = document.querySelector("#timeremaining");
+// Variables to reference DOM elements
+var currentClock = document.querySelector("#currentClock");
+var clock = document.querySelector("#startTime");
+var quizInfo = document.querySelector("#quizInfo");
 var questionsDiv = document.querySelector("#questionsDiv");
-var wrapper = document.querySelector("#wrapper");
 
-// 15 seconds per question starting at 100:
-var secondsLeft = 101;
-// interval time
+// Clock left is for amount of seconds per question:
+var clockLeft = 101;
+// wrongAnswer time
+var wrongAnswer = 15;
+// Holds interval time
 var holdInterval = 0;
-// wrong answer time decremented
-var penalty = 15;
 // Creates new element
 var ulCreate = document.createElement("ul");
-
-
 
