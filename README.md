@@ -1,15 +1,9 @@
-# Javascript-Code-Quiz
-Create a timer attached to a button with a starting value of 0
-When timer is pressed start a reverse countdown
-Create a 0 for countdown
-When countdown starts, start quiz
-Start Quiz will be on appended page
-Append the question: choices
-When user selects the right answer, textcontent "Correct!"
-When user selects the right answer, textcontent "Wrong!"
-Final score will keep track of how many the user got right
-Left over time will be deducted from final score
-Final Score Appended page
-Captures local storage
-Travels to another HTML
-Retrieved highscores
+# Javascript-Code-Quiz Overview
+
+Description: This is a 5 question timed Javascript code quiz. Any incorrect answer will deduct 15 seconds from your time. Once completed, the amount of time left over will be your final score. Enter your name to submit your final score and view the leaderboard once complete. 
+
+![Screenshot 1](./assets/images/JS-SC1.png)
+![Screenshot 2](./assets/images/JS-SC2.png)
+![Screenshot 3](./assets/images/JS-SC3.png)
+![Screenshot 4](./assets/images/JS-SC4.png)
+
