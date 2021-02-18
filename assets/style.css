@@ -1,0 +1,8 @@
+#quizInfo {
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    width: 500px;
+    height: 500px;
+    border: 10px rgb(22, 127, 233);
+}
