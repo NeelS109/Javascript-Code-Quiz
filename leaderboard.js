@@ -7,7 +7,7 @@ var clear = document.querySelector("#clear");
 clear.addEventListener("click", function () {
     localStorage.clear();
     location.reload();
-
+});
 // Retreives local stroage 
 var totalScores = localStorage.getItem("allScores");
 totalScores = JSON.parse(totalScores);
