@@ -24,3 +24,32 @@ button {
     border-radius: 8px;
     font-size: medium;
 }
+
+#submitFinal {
+    background-color: rgb(3, 128, 145);
+    margin-left: 33%;
+    padding: 15px 15px;
+    font-size: 20px;
+    color: white;
+}
+
+input {
+    margin-bottom: 20px;
+    width: 50%;
+    font-size: medium;
+    background-color: lightslategrey;
+}
+
+h1 {
+    text-align: center;
+    color: darkcyan;
+}
+
+li {
+    background-color: rgb(10, 75, 128);
+    margin-top: 5px;
+    padding: 5px 5px;
+    width: 40%;
+    font-size: 20px;
+    color: white;
+}
